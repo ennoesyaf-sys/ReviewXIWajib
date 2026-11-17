@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Review PSAS Kelas 11</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+/* Plan: ink + paper tokens; one accent per bab (teal / amber / indigo). Layout: tab bar, strategy cards, short text, one-by-one question cards. */
+:root{--bg:#f7f8f9;--card:#ffffff;--ink:#17212b;--mut:#5d6b7a;--line:#dfe5ea;--ok:#15803d;--okbg:#e6f6ec;--no:#b42318;--nobg:#fdeceb;--c1:#0f766e;--c1bg:#e2f3f1;--c2:#b45309;--c2bg:#fbefdc;--c3:#4338ca;--c3bg:#e9e8fb;--acc:var(--c1);--accbg:var(--c1bg)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10161c;--card:#18212a;--ink:#e8edf2;--mut:#9aa8b6;--line:#2a3643;--ok:#4ade80;--okbg:#14301f;--no:#f87171;--nobg:#381a19;--c1:#5eead4;--c1bg:#12302d;--c2:#fbbf24;--c2bg:#33260f;--c3:#a5b4fc;--c3bg:#1f2147;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10161c;--card:#18212a;--ink:#e8edf2;--mut:#9aa8b6;--line:#2a3643;--ok:#4ade80;--okbg:#14301f;--no:#f87171;--nobg:#381a19;--c1:#5eead4;--c1bg:#12302d;--c2:#fbbf24;--c2bg:#33260f;--c3:#a5b4fc;--c3bg:#1f2147;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,system-ui,sans-serif;padding-block:0 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:760px;margin:0 auto}
+header{padding:22px 0 14px}
+header h1{font-size:26px;line-height:1.15;margin:0 0 6px;font-weight:800;text-wrap:balance}
+header p{margin:0;color:var(--mut);max-width:60ch}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+.tab{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:9px 14px;font:600 14px Inter,sans-serif;cursor:pointer;display:flex;gap:8px;align-items:center}
+.tab[aria-selected=true]{background:var(--acc);color:#fff;border-color:var(--acc)}
+:root[data-theme="dark"] .tab[aria-selected=true],:root:not([data-theme="light"]) .tab[aria-selected=true]{color:#10161c}
+.tab .sc{font-size:12px;font-weight:700;opacity:.85}
+.tab:focus-visible,.opt:focus-visible,.hintbtn:focus-visible,.reset:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+h2{font-size:19px;margin:22px 0 10px;font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.step b{display:block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);margin-bottom:4px}
+.strat{display:grid;gap:8px}
+.tip{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--acc);border-radius:10px;padding:11px 14px}
+.tip b{display:block;margin-bottom:2px}
+.tip span{color:var(--mut)}
+.vt{border-collapse:collapse;width:100%;margin-top:6px;color:var(--ink);font-size:14px}.vt th,.vt td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}.vt th{background:var(--accbg)}.tip code,.hint code{font:600 13px Inter,sans-serif;background:var(--accbg);color:var(--ink);padding:1px 6px;border-radius:6px}
+.text{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;font:17px/1.6 'Source Serif 4',Georgia,serif;margin-bottom:14px}
+.text h3{margin:0 0 8px;font:700 17px Inter,sans-serif;text-align:center}
+.text p{margin:0 0 8px}
+.q{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:12px}
+.qn{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.stem{font-weight:600;margin:3px 0 10px;white-space:pre-line}
+.opts{display:grid;gap:7px}
+.opt{display:grid;grid-template-columns:26px 1fr;gap:8px;text-align:left;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:9px;padding:9px 11px;font:inherit;cursor:pointer;min-width:0}
+.opt:hover:not([disabled]){border-color:var(--acc)}
+.opt .l{font-weight:700;color:var(--mut)}
+.opt.right{background:var(--okbg);border-color:var(--ok)}
+.opt.wrong{background:var(--nobg);border-color:var(--no)}
+.opt[disabled]{cursor:default}
+.hintbtn,.reset{margin-top:10px;border:0;background:none;color:var(--acc);font:600 13px Inter,sans-serif;cursor:pointer;padding:4px 0}
+.hint{margin-top:8px;background:var(--accbg);border-radius:9px;padding:9px 12px;font-size:14px}
+.fb{margin-top:10px;border-radius:9px;padding:10px 12px;font-size:14px}
+.fb.ok{background:var(--okbg)}.fb.no{background:var(--nobg)}
+.fb strong{display:block;margin-bottom:2px}
+.ev{font-family:'Source Serif 4',Georgia,serif;font-style:italic}
+.sum{background:var(--accbg);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:6px}
+.sum b{font-size:18px}
+.bar{height:8px;border-radius:99px;background:var(--line);margin-top:8px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .3s}
+.top{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.pill{font-weight:700;font-size:13px;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:4px 12px}
+#nav{display:none}
+.two{display:block}
+body.pres{font-size:22px;padding-bottom:96px}
+.pres .wrap{max-width:1240px}
+.pres header{padding:8px 0 4px}.pres header p{display:none}.pres h1{font-size:22px}
+.pres h2{font-size:34px;margin:12px 0}
+.pres .tip,.pres .step{font-size:23px;padding:16px 20px;line-height:1.5}
+.pres .tip code,.pres .hint code{font-size:20px}
+.pres .text{font-size:30px;line-height:1.55;padding:24px 30px}.pres .text h3{font-size:26px}
+.pres .q{padding:20px 24px}.pres .qn{font-size:16px}
+.pres .stem{font-size:30px;line-height:1.4}
+.pres .opts{gap:10px}
+.pres .opt{font-size:27px;padding:14px 18px;grid-template-columns:42px 1fr}
+.pres .hint,.pres .fb{font-size:23px;padding:14px 18px}
+.pres .vt{font-size:22px}
+.pres .tab{font-size:16px}
+.pres .hintbtn,.pres .reset{font-size:20px;padding:8px 0}
+.pres .sum b{font-size:30px}.pres .sum span{font-size:22px}
+.pres #nav{display:flex;position:fixed;left:0;right:0;bottom:0;background:var(--card);border-top:1px solid var(--line);padding:10px 16px;justify-content:center;gap:18px;align-items:center;z-index:5}
+#nav button{font:700 20px Inter,sans-serif;border:1px solid var(--acc);background:var(--acc);color:#fff;border-radius:12px;padding:10px 28px;cursor:pointer}
+#nav button[disabled]{opacity:.35;cursor:default}
+#nav span{font:700 20px Inter,sans-serif;min-width:90px;text-align:center}
+@media (min-width:1000px){.pres .two{display:grid;grid-template-columns:5fr 6fr;gap:22px;align-items:start}.pres .two .text{position:sticky;top:8px;margin:0}}
+@media (prefers-reduced-motion:reduce){.bar i{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header>
+ <div class="top"><h1>Review PSAS Bahasa Inggris Kelas 11</h1><span><button class="pill" id="pbtn" type="button" style="cursor:pointer;color:var(--ink)">Mode proyektor</button> <span class="pill" id="total">Skor total 0</span></span></div>
+ <p>Tiga bab, tiap bab punya strategi singkat, ringkasan grammar, satu teks pendek, dan soal membaca serta grammar. Coba jawab dulu. Kunci dan alasannya muncul setelah kamu memilih.</p>
+</header>
+<div class="tabs" role="tablist" id="tabs"></div>
+<main id="main"></main>
+<div id="nav"><button id="pv" type="button">← Sebelumnya</button><span id="pn"></span><button id="nx" type="button">Berikutnya →</button></div>
+</div>
+<script>
+function T(h,r){return '<table class="vt"><tr>'+h.map(function(x){return '<th>'+x+'</th>'}).join('')+'</tr>'+r.map(function(y){return '<tr>'+y.map(function(x){return '<td>'+x+'</td>'}).join('')+'</tr>'}).join('')+'</table>'}
+var BABS=[
+{id:'a',name:'Argumentative Text',col:'c1',
+ tips:[
+  ['Thesis','Ada di paragraf pertama. Cari penanda pendapat: <code>In my opinion, I believe, I think</code>. Tanyakan: apakah penulis setuju atau menolak?'],
+  ['Argumen dan bukti','Tiap argumen diikuti alasan atau bukti: <code>First, Second, because, as a result</code>. Pertanyaan detail dijawab dari kalimat alasan itu.'],
+  ['Pendapat lawan','Waspadai <code>Some people argue…</code>. Itu pendapat pihak lain. Pendapat penulis biasanya muncul setelah <code>However</code>.'],
+  ['Kalimat penutup','Menegaskan kembali thesis (reiteration). Penandanya <code>Therefore, In conclusion</code>.'],
+  ['Setuju dan tidak setuju','Tentukan dulu arah responsnya, lalu kekuatannya: sangat setuju, setuju sebagian, atau menolak dengan sopan.']],
+ gram:[
+  ['Connectors of opinion',T(['Fungsi','Ungkapan'],[['Menyatakan pendapat','In my opinion, / I believe (that) / I think (that) / From my point of view, / As far as I’m concerned, / Personally,'],['Menyusun alasan','First, / Second, / Finally, / Moreover, / Furthermore,'],['Sebab dan akibat','because, since / Therefore, / As a result,'],['Kontras','However, / On the other hand, / Although']])+'<br>Setelah ungkapan pendapat, tulis klausa lengkap: <i>In my opinion, schools should start later.</i>'],
+  ['Agree and disagree',T(['Tingkat','Ungkapan'],[['Sangat setuju','I couldn’t agree more. / I totally agree. / Exactly.'],['Setuju','I agree with you. / That’s right. / You’re right.'],['Setuju sebagian','I agree up to a point, but… / That’s partly true, but…'],['Tidak setuju (sopan)','I’m afraid I don’t agree. / I see your point, but… / I don’t think so.'],['Sangat tidak setuju','I completely disagree. / That’s nonsense.']])],
+  ['Cara memilih respons','Baca alasan setelah respons. Jika alasannya mendukung ide lawan bicara, responsnya setuju. Jika diawali <code>but</code> atau <code>however</code>, ada penolakan atau setuju sebagian.']],
+ text:{title:'Should School Start Later?',p:['In my opinion, schools should start at 8.30 a.m. instead of 7 a.m. First, teenagers need about nine hours of sleep, but many students go to bed late because of homework. As a result, they feel sleepy in the first lesson and cannot focus.','Some people argue that a later start will make students come home late. However, I believe this problem can be solved by shortening the break time. Therefore, schools should give a later start a chance.']},
+ qs:[
+ {s:'What is the writer’s main argument?',o:['Students should sleep less at night.','Schools should start later in the morning.','Teachers should give less homework.','Breaks at school should be longer.','Students should go to school on Saturdays.'],a:1,h:'Cari penanda pendapat di kalimat pertama.',w:'Thesis ada di kalimat pertama.',e:'In my opinion, schools should start at 8.30 a.m. instead of 7 a.m.'},
+ {s:'According to the writer, why do students feel sleepy in the first lesson?',o:['They eat breakfast too slowly.','They travel far from home.','They go to bed late because of homework.','They study too little at home.','They dislike the first subject.'],a:2,h:'Cari As a result, lalu lihat kalimat sebelumnya.',w:'As a result menunjukkan akibat. Sebabnya ada di kalimat sebelumnya.',e:'…many students go to bed late because of homework. As a result, they feel sleepy…'},
+ {s:'The word “However” in the second paragraph introduces …',o:['an example','a time sequence','the writer’s conclusion','a new reason for the thesis','the writer’s response to the opposing view'],a:4,h:'Lihat kalimat sebelum However: pendapat siapa?',w:'Kalimat sebelumnya adalah pendapat orang lain. However membawa jawaban penulis.',e:'Some people argue… However, I believe this problem can be solved…'},
+ {s:'Which statement would the writer most likely agree with?',o:['Sleep is important for students’ concentration.','Students need less sleep than adults.','Break time should be longer in the morning.','Homework has no effect on sleeping time.','Early lessons are always the best.'],a:0,h:'Pilih yang searah dengan argumen pertama.',w:'Penulis menghubungkan tidur dengan kemampuan fokus.',e:'…they feel sleepy in the first lesson and cannot focus.'},
+ {s:'What is the purpose of the last sentence?',o:['To describe a school building.','To tell a past experience.','To explain how to start a school day.','To restate the writer’s opinion.','To give an example of tiredness.'],a:3,h:'Perhatikan kata Therefore.',w:'Kalimat penutup argumentative menegaskan kembali thesis.',e:'Therefore, schools should give a later start a chance.'},
+ {s:'Which expression is used to state an opinion?',o:['I couldn’t agree more.','I don’t think so.','From my point of view, uniforms are useful.','That’s exactly right.','I completely disagree.'],a:2,h:'Pendapat sendiri, bukan respons terhadap ucapan orang.',w:'From my point of view = menurut sudut pandang saya.',e:'From my point of view, uniforms are useful.'},
+ {s:'A: Homework should be banned on weekends.\nB: I couldn’t agree more.\nB shows that he …',o:['strongly agrees with A','partly agrees with A','strongly disagrees with A','is not sure about A’s idea','asks A to repeat the idea'],a:0,h:'I couldn’t agree more = tidak bisa lebih setuju lagi.',w:'Ungkapan ini adalah persetujuan paling kuat.',e:'I couldn’t agree more.'},
+ {s:'A: Eating fast food every day is fine.\nB: I’m afraid I don’t agree. It is not healthy.\nB’s response shows …',o:['strong agreement','partial agreement','a question about the idea','hesitation','polite disagreement'],a:4,h:'I’m afraid dipakai untuk menolak dengan sopan.',w:'B menolak dan memberi alasan.',e:'I’m afraid I don’t agree. It is not healthy.'},
+ {s:'A: Learning online is more flexible than learning at school.\nB: I agree up to a point, ___ some students lose focus at home.',o:['so','but','because','and','or'],a:1,h:'Setuju sebagian berarti ada catatan yang berlawanan.',w:'Connector kontras: but.',e:'I agree up to a point, but…'},
+ {s:'Which sentence uses a connector of opinion correctly?',o:['Believe I, schools need more libraries.','In my opinion that schools need more libraries.','As far as I’m concern, schools need more libraries.','I believe that schools need more libraries.','My point of view, schools need more libraries.'],a:3,h:'Periksa urutan kata dan bentuk ungkapan.',w:'Yang benar: I believe that + klausa. Lainnya salah susunan atau bentuk (As far as I’m concerned, From my point of view).',e:'I believe that schools need more libraries.'},
+ {s:'A: Social media makes teenagers lonely.\nB: ___. Many teenagers make new friends online.',o:['I totally agree','That is exactly right','I don’t think so','You are right','I couldn’t agree more'],a:2,h:'Kalimat kedua B memberi bukti yang bertentangan.',w:'Alasan B berlawanan dengan A, jadi B menolak.',e:'I don’t think so. Many teenagers make new friends online.'},
+ {s:'Which response is the most polite way to disagree?',o:['I see your point, but I think it is not always true.','That is nonsense.','You are wrong.','I hate your idea.','Stop talking about it.'],a:0,h:'Pilih yang mengakui pendapat lawan bicara lebih dulu.',w:'I see your point, but… sopan dan tetap menolak.',e:'I see your point, but…'}]},
+{id:'d',name:'Descriptive Text',col:'c2',
+ tips:[
+  ['Gambaran umum','Kalimat pertama biasanya memuat nama, lokasi, dan jenis tempat (identification).'],
+  ['Detail','Ciri tempat (bangunan, warna, bagian terkenal) ada di paragraf deskripsi. Cari nama bagian yang ditanyakan.'],
+  ['Kata ganti dan rujukan','Untuk soal “it, they, which”, kembali satu kalimat ke belakang. Ganti dengan jawabanmu dan baca ulang.'],
+  ['Sinonim','Masukkan tiap opsi ke kalimat. Pilih yang maknanya tetap sama dan paling pas dengan konteks.'],
+  ['Passive voice','Cari <code>be + verb 3</code>. Fokus kalimat adalah tempat atau bangunan, bukan pelakunya.']],
+ gram:[
+  ['Passive voice: rumus',T(['Bentuk','Rumus','Contoh'],[['Simple present','am/is/are + V3','The castle is visited by tourists.'],['Simple past','was/were + V3','The castle was built for the royal family.'],['Modal','can/must/should + be + V3','The pools can be seen from the gate.']])],
+  ['Active menjadi passive','Empat langkah: 1) objek menjadi subjek, 2) pilih be sesuai tense dan subjek baru, 3) pakai verb 3, 4) pelaku diletakkan setelah <code>by</code> (boleh dihilangkan).<br><b>Active:</b> Workers cleaned the temple. <b>Passive:</b> The temple was cleaned by workers.<br>Passive dipakai bila fokus pada tempat atau benda, atau pelaku tidak penting. Karena itu passive banyak muncul di teks tentang tempat wisata dan bangunan bersejarah.'],
+  ['Verb 3 (past participle)',T(['Regular','Irregular'],[['visit → visited<br>surround → surrounded<br>clean → cleaned','build → built<br>make → made<br>see → seen<br>know → known<br>give → given<br>write → written<br>take → taken']])],
+  ['Intensifiers',T(['Jenis','Intensifier','Contoh'],[['Adjective biasa (gradable)','very, really, extremely, so, quite, rather','very beautiful, extremely old'],['Adjective ekstrem (ungradable)','absolutely, totally, completely','absolutely fantastic, absolutely freezing, absolutely enormous']])+'<br>Jangan campur: <i>very fantastic</i> dan <i>absolutely beautiful</i> kurang tepat. <i>Too</i> berarti berlebihan dan bernuansa negatif.']],
+ text:{title:'The Water Castle of Yogyakarta',p:['Taman Sari, also known as the Water Castle, is a very beautiful tourist place in Yogyakarta. It was built in the eighteenth century for the royal family. Today, the castle is visited by thousands of tourists every year.','The most famous part is the bathing pools. The pools are surrounded by tall walls and old stone gates. Visitors can also see a quiet underground mosque, which is absolutely fascinating.']},
+ qs:[
+ {s:'What is the text mainly about?',o:['The history of Yogyakarta’s royal family.','Instructions to visit a mosque.','A story about a swimming pool.','A description of a historical tourist place.','The best hotels near Taman Sari.'],a:3,h:'Lihat kalimat pertama dan jenis teks.',w:'Teks mendeskripsikan sebuah tempat wisata bersejarah.',e:'Taman Sari… is a very beautiful tourist place in Yogyakarta.'},
+ {s:'For whom was Taman Sari built?',o:['The royal family.','Foreign tourists.','Local farmers.','School children.','Traders from other islands.'],a:0,h:'Cari kalimat dengan was built.',w:'Passive: was built for the royal family.',e:'It was built in the eighteenth century for the royal family.'},
+ {s:'According to the second paragraph, what can visitors see?',o:['A modern shopping centre.','A large traditional market.','A tall mountain and a river.','A big zoo with rare animals.','Bathing pools, stone gates and an underground mosque.'],a:4,h:'Scan paragraf kedua.',w:'Opsi lain tidak disebut di teks.',e:'The most famous part is the bathing pools… old stone gates… underground mosque.'},
+ {s:'The word “fascinating” in the second paragraph is closest in meaning to …',o:['boring','very interesting','frightening','ordinary','crowded'],a:1,h:'Masukkan tiap opsi: “…which is absolutely ___”.',w:'Tempat yang dipuji di teks pasti menarik.',e:'…a quiet underground mosque, which is absolutely fascinating.'},
+ {s:'Which statement is true about the text?',o:['The castle was built last year.','Tourists cannot enter the castle.','The pools are surrounded by tall walls and old stone gates.','The castle is located in Jakarta.','The mosque is above the ground.'],a:2,h:'Cocokkan tiap opsi dengan kalimat di teks.',w:'Hanya satu opsi yang sesuai dengan teks.',e:'The pools are surrounded by tall walls and old stone gates.'},
+ {s:'The castle ___ by the king in the eighteenth century.',o:['builds','is built','was built','built','was build'],a:2,h:'In the eighteenth century = lampau. Kalimat passive.',w:'was + V3 (built).',e:'was built'},
+ {s:'This beach ___ by thousands of tourists every year.',o:['visit','visited','was visit','is visit','is visited'],a:4,h:'Every year = kebiasaan (present). Passive.',w:'is + V3 (visited).',e:'is visited'},
+ {s:'Which sentence is the passive form of “Workers cleaned the temple every morning”?',o:['The temple was cleaned by workers every morning.','The temple cleaned workers every morning.','Workers were cleaned by the temple every morning.','The temple is cleaned by workers every morning.','The temple was clean by workers every morning.'],a:0,h:'Tense aktifnya past. Objek menjadi subjek.',w:'Past + passive = was + V3.',e:'The temple was cleaned by workers every morning.'},
+ {s:'The view from the top of the hill is ___ spectacular. I have never seen anything like it.',o:['very','quite','rather','absolutely','so'],a:3,h:'Spectacular adalah adjective ekstrem.',w:'Adjective ekstrem memakai absolutely.',e:'absolutely spectacular'},
+ {s:'Which adjective is most natural after “absolutely”?',o:['tall','cheap','fantastic','small','old'],a:2,h:'Pilih adjective yang sudah bermakna ekstrem.',w:'fantastic = ekstrem, jadi cocok dengan absolutely.',e:'absolutely fantastic'},
+ {s:'The pools are ___ by tall walls.',o:['surround','surrounded','surrounding','surrounds','was surrounded'],a:1,h:'Are + ? Pasangannya verb 3.',w:'are + surrounded (subjek jamak).',e:'The pools are surrounded by tall walls.'},
+ {s:'Which sentence is passive?',o:['The guide explains the history.','Tourists take many photos.','The lake attracts many visitors.','The temple is visited by many people.','The workers repair the road.'],a:3,h:'Cari be + verb 3 dan by.',w:'is visited by = passive.',e:'The temple is visited by many people.'}]},
+{id:'p',name:'Procedure Text dan Degree of Comparison',col:'c3',
+ tips:[
+  ['Tujuan teks','Judul biasanya “How to …”. Tujuannya menunjukkan cara membuat atau melakukan sesuatu.'],
+  ['Urutan langkah','Ikuti sequence markers: <code>First, Then, Next, After that, Finally</code>. Soal “apa langkah berikutnya” dijawab dari urutan ini.'],
+  ['Pertanyaan “Why”','Cari alasan setelah <code>before, or, because</code>. Alasan sering berupa akibat bila langkah dilewati.'],
+  ['Modal verbs','<code>must</code> wajib, <code>should</code> disarankan, <code>can/may</code> boleh. Pilih kekuatan modal yang sesuai konteks.'],
+  ['Degree of comparison','Lihat penanda: <code>as…as</code> (sama), <code>than</code> (lebih), <code>the</code> + kelompok (paling).']],
+ gram:[
+  ['Sequence markers',T(['Posisi','Penanda'],[['Awal','First, / First of all, / To begin with,'],['Tengah','Second, / Then, / Next, / After that, / Afterwards, / Meanwhile, (bersamaan)'],['Akhir','Finally, / Last, / The last step is…']])+'<br>Dengan klausa: <i>Before you start, … Once the water boils, … When it is ready, …</i>'],
+  ['Modal verbs dalam prosedur',T(['Modal','Makna','Contoh'],[['must / have to','wajib','You must unplug the machine.'],['must not','dilarang','You must not touch the hot pan.'],['should','disarankan','You should let the tea cool.'],['can / may','boleh atau dapat','You can add more sugar.']])+'<br>Rumus: modal + verb 1.'],
+  ['Degree of comparison',T(['Tingkat','Rumus','Contoh'],[['Positive','as + adjective + as','Anna is as tall as Rina.'],['Comparative (1 suku kata)','adjective-er + than','Budi is taller than Anna.'],['Comparative (2+ suku kata)','more + adjective + than','This bag is more expensive than that one.'],['Superlative (1 suku kata)','the + adjective-est','Dewi is the tallest in the class.'],['Superlative (2+ suku kata)','the most + adjective','It is the most beautiful beach.']])],
+  ['Ejaan dan bentuk tak beraturan',T(['Pola','Contoh'],[['Tambah -er / -est','tall → taller → tallest'],['Berakhiran e: tambah -r / -st','large → larger → largest'],['1 vokal + 1 konsonan: gandakan','big → bigger → biggest'],['Konsonan + y: y → i','happy → happier → happiest'],['Tak beraturan','good → better → best<br>bad → worse → worst<br>far → farther (further) → farthest (furthest)<br>many/much → more → most<br>little → less → least']])],
+  ['Cara memilih','Ada <code>than</code>: comparative. Ada <code>the</code> + kelompok (in the class): superlative. Ada <code>as…as</code>: positive. Jangan gabungkan dua bentuk: <i>more taller</i> dan <i>most tallest</i> salah.']],
+ text:{title:'How to Make Iced Lemon Tea',p:['You need two tea bags, two slices of lemon, two teaspoons of sugar, ice cubes, and 250 ml of hot water.','First, put the tea bags into a cup and pour in the hot water. Then, wait for three minutes and take out the tea bags. Next, add the sugar and stir until it dissolves. After that, let the tea cool. You should not add the ice while the tea is hot, or the ice will melt too quickly. Finally, pour the tea into a glass of ice cubes and put the lemon slices on top.']},
+ qs:[
+ {s:'What is the purpose of the text?',o:['To describe a type of tea.','To tell a story about making tea.','To persuade people to drink tea.','To explain why tea is healthy.','To show how to make a drink.'],a:4,h:'Lihat judul “How to …”.',w:'Procedure text menunjukkan cara membuat sesuatu.',e:'How to Make Iced Lemon Tea'},
+ {s:'What do we do after taking out the tea bags?',o:['Put the lemon slices on top.','Add the sugar and stir.','Pour the tea into the glass of ice.','Pour in the hot water.','Wait for three minutes.'],a:1,h:'Cari take out the tea bags, lalu lihat langkah sesudahnya.',w:'Urutannya: wait, take out, add sugar.',e:'Then, wait for three minutes and take out the tea bags. Next, add the sugar…'},
+ {s:'Why should we let the tea cool before adding the ice?',o:['The sugar will not dissolve.','The tea will taste too sweet.','The lemon will turn bitter.','The ice will melt too quickly.','The cup will become too heavy.'],a:3,h:'Cari kata or setelah larangan.',w:'Alasan ada setelah or.',e:'…or the ice will melt too quickly.'},
+ {s:'The word “dissolves” in the text is closest in meaning to …',o:['mixes completely with the water','becomes very hot','turns to ice','floats on top','changes colour'],a:0,h:'Apa yang terjadi pada gula saat diaduk?',w:'Gula yang diaduk bercampur sepenuhnya dengan air.',e:'…add the sugar and stir until it dissolves.'},
+ {s:'The phrase “After that” in the text shows …',o:['a reason','a contrast','the order of steps','a place','a comparison'],a:2,h:'Apa fungsi penanda ini dalam prosedur?',w:'After that = sesudah itu, urutan langkah.',e:'…stir until it dissolves. After that, let the tea cool.'},
+ {s:'Which word is used to start a procedure?',o:['Finally','After that','First of all','Then','Next'],a:2,h:'Pilih penanda langkah pertama.',w:'First of all = pertama-tama.',e:'First of all'},
+ {s:'First, wash the rice. ___, put it in the rice cooker. Finally, press the button.',o:['However','Because','For example','In contrast','Then'],a:4,h:'Cari penanda urutan, bukan kontras atau contoh.',w:'Then = kemudian, langkah berikutnya.',e:'First… Then… Finally…'},
+ {s:'You ___ unplug the machine before cleaning it. It is dangerous if you do not.',o:['must','can','might','would','may'],a:0,h:'Kalimat kedua menunjukkan bahaya, jadi langkah ini wajib.',w:'Hal wajib untuk keselamatan memakai must.',e:'It is dangerous if you do not.'},
+ {s:'You ___ add more sugar if you like sweet tea, but it is not necessary.',o:['must','have to','must not','can','should not'],a:3,h:'Not necessary = tidak wajib, hanya boleh.',w:'can = boleh dilakukan.',e:'…but it is not necessary.'},
+ {s:'This bag is not ___ expensive as that one.',o:['more','as','than','most','too'],a:1,h:'Pola kesamaan dengan not.',w:'not as + adjective + as.',e:'not as expensive as'},
+ {s:'The blue bag is ___ than the red one. It costs only Rp50,000.',o:['cheaper','cheapest','more cheap','most cheap','as cheap'],a:0,h:'Ada than dan perbandingan dua benda.',w:'cheap (1 suku kata) → cheaper than.',e:'cheaper than'},
+ {s:'Sinta is the ___ student in our class. She wins every competition.',o:['smarter','more smart','smartest','most smarter','smart'],a:2,h:'Ada the dan kelompok “in our class”.',w:'Superlative 1 suku kata: the + -est.',e:'the smartest student in our class'},
+ {s:'My cooking is bad, but my brother’s cooking is even ___.',o:['badder','worse','worst','more bad','the worst'],a:1,h:'Bad adalah irregular. Bandingkan dua orang.',w:'bad → worse (comparative).',e:'bad → worse'},
+ {s:'Which sentence is correct?',o:['This is the most tallest tree in the park.','This tree is more taller than that one.','That tree is as taller as this one.','This is the tallest tree in the park.','This tree is tallest than that one.'],a:3,h:'Cari yang tidak menggabungkan dua bentuk perbandingan.',w:'Superlative 1 suku kata: the tallest. Yang lain salah bentuk.',e:'the tallest tree in the park'}]}
+];
+var L='ABCDE',state={},cur=0,pres=false,pi=0,slides=[];
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+function score(b){var s=0;BABS[b].qs.forEach(function(q,i){if(state[b+'-'+i]&&state[b+'-'+i].ok)s++});return s}
+function total(){return score(0)+score(1)+score(2)}
+function refresh(){
+ document.getElementById('total').textContent='Skor total '+total()+'/'+BABS.reduce(function(a,b){return a+b.qs.length},0);
+ BABS.forEach(function(b,i){var t=document.getElementById('sc'+i);if(t)t.textContent=score(i)+'/'+b.qs.length});
+ var s=document.getElementById('summary');if(s){var sc=score(cur),n=0,N=BABS[cur].qs.length;BABS[cur].qs.forEach(function(q,i){if(state[cur+'-'+i])n++});
+  s.querySelector('b').textContent='Skor bab ini: '+sc+'/'+N;s.querySelector('.bar i').style.width=(n/N*100)+'%';
+  s.querySelector('span').textContent=n<N?('Sudah dijawab '+n+' dari '+N+' soal.'):(sc/N>=.85?'Bagus sekali, bab ini sudah kuat.':sc/N>=.6?'Cukup baik. Baca ulang strategi, lalu ulangi soal yang salah.':'Baca ulang strategi bab ini, lalu coba lagi dari awal.')}
+}
+function render(){
+ var b=BABS[cur],m=document.getElementById('main');m.innerHTML='';
+ document.documentElement.style.setProperty('--acc','var(--'+b.col+')');document.documentElement.style.setProperty('--accbg','var(--'+b.col+'bg)');
+ if(cur===0){m.appendChild(el('h2',null,'Strategi umum: Baca, Cari, Coret, Cek'));var g=el('div','steps');
+  [['1 · Baca','Baca pertanyaan dulu. Tentukan jenis soalnya: gagasan utama, detail, rujukan, sinonim, atau tata bahasa.'],['2 · Cari','Temukan satu kalimat di teks yang menjawab pertanyaan. Garis bawahi.'],['3 · Coret','Coret pengecoh: tidak ada di teks, membalik isi teks, atau hanya benar sebagian.'],['4 · Cek','Pastikan jawabanmu menjawab pertanyaan yang ditanyakan, bukan topik yang mirip.']].forEach(function(x){g.appendChild(el('div','step','<b>'+x[0]+'</b>'+x[1]))});m.appendChild(g)}
+ m.appendChild(el('h2',null,'Strategi '+b.name));var st=el('div','strat');b.tips.forEach(function(t){st.appendChild(el('div','tip','<b>'+t[0]+'</b><span>'+t[1]+'</span>'))});m.appendChild(st);
+ m.appendChild(el('h2',null,'Baca teks ini'));var tx=el('div','text','<h3>'+b.text.title+'</h3>'+b.text.p.map(function(p){return '<p>'+p+'</p>'}).join(''));m.appendChild(tx);
+ b.qs.forEach(function(q,i){if(i<5){var c=card(q,i);c.dataset.r='1';m.appendChild(c)}});
+ m.appendChild(el('h2',null,'Ringkasan grammar: '+b.name));var gs=el('div','strat');b.gram.forEach(function(t){gs.appendChild(el('div','tip','<b>'+t[0]+'</b><span>'+t[1]+'</span>'))});m.appendChild(gs);
+ m.appendChild(el('h2',null,'Latihan grammar'));
+ b.qs.forEach(function(q,i){if(i>=5)m.appendChild(card(q,i))});
+ var s=el('div','sum','<b></b><div class="bar"><i></i></div><span></span> <button class="reset" id="rs">Ulangi bab ini</button>');s.id='summary';m.appendChild(s);
+ document.getElementById('rs').onclick=function(){b.qs.forEach(function(q,i){delete state[cur+'-'+i]});render();refresh();window.scrollTo(0,0)};
+ refresh();
+ if(pres)present(m);
+}
+function present(m){
+ var kids=Array.prototype.slice.call(m.children),pend=[],text=null;slides=[];
+ kids.forEach(function(n){
+  if(n.tagName==='H2'){pend.push(n);return}
+  if(n.classList.contains('text'))text=n;
+  var sl=pend.slice();pend=[];
+  if(n.dataset.r==='1'&&text){var w=el('div','two');w.appendChild(text.cloneNode(true));w.appendChild(n);sl.push(w)}else sl.push(n);
+  slides.push(sl)});
+ if(pi>=slides.length)pi=slides.length-1;show()}
+function show(){
+ var m=document.getElementById('main');m.replaceChildren.apply(m,slides[pi]);
+ document.getElementById('pn').textContent=(pi+1)+' / '+slides.length;
+ document.getElementById('pv').disabled=pi===0;document.getElementById('nx').disabled=pi===slides.length-1;
+ refresh();window.scrollTo(0,0)}
+function go(d){if(!pres)return;var n=pi+d;if(n<0||n>=slides.length)return;pi=n;show()}
+document.getElementById('pv').onclick=function(){go(-1)};document.getElementById('nx').onclick=function(){go(1)};
+document.getElementById('pbtn').onclick=function(){pres=!pres;pi=0;document.body.classList.toggle('pres',pres);
+ if(pres)document.documentElement.setAttribute('data-theme','light');else document.documentElement.removeAttribute('data-theme');
+ this.textContent=pres?'Keluar mode proyektor':'Mode proyektor';render();window.scrollTo(0,0)};
+document.addEventListener('keydown',function(e){if(!pres)return;
+ if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(1)}
+ else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(-1)}
+ else{var k='abcde'.indexOf(e.key.toLowerCase());if(e.key.length===1&&k>=0){var o=document.querySelectorAll('#main .opts')[0];if(o&&o.children[k]&&!o.children[k].disabled)o.children[k].click()}
+  else if(e.key.toLowerCase()==='h'){var hb=document.querySelector('#main .hintbtn');if(hb&&!hb.hidden)hb.click()}}});
+function card(q,i){
+ var key=cur+'-'+i,d=el('div','q'),h=el('div','qn','Soal '+(i+1)),st=el('div','stem');st.textContent=q.s;d.appendChild(h);d.appendChild(st);
+ var os=el('div','opts');d.appendChild(os);var hb=el('button','hintbtn','Lihat hint');hb.type='button';var hd=el('div','hint');hd.hidden=true;hd.textContent='Hint: '+q.h;hb.onclick=function(){hd.hidden=!hd.hidden;hb.textContent=hd.hidden?'Lihat hint':'Sembunyikan hint'};
+ var fb=el('div','fb');fb.hidden=true;
+ q.o.forEach(function(t,k){var b=el('button','opt','<span class="l">'+L[k]+'.</span><span></span>');b.type='button';b.lastChild.textContent=t;b.onclick=function(){if(state[key])return;state[key]={ok:k===q.a,pick:k};lock();refresh()};os.appendChild(b)});
+ d.appendChild(hb);d.appendChild(hd);d.appendChild(fb);
+ function lock(){var s=state[key];var bs=os.children;for(var k=0;k<bs.length;k++){bs[k].disabled=true;if(k===q.a)bs[k].classList.add('right');else if(k===s.pick)bs[k].classList.add('wrong')}
+  hb.hidden=true;hd.hidden=true;fb.hidden=false;fb.className='fb '+(s.ok?'ok':'no');
+  fb.innerHTML='<strong>'+(s.ok?'Benar.':'Belum tepat. Jawaban: '+L[q.a]+'.')+'</strong>'+q.w+'<div class="ev">“'+q.e+'”</div>'}
+ if(state[key])lock();
+ return d}
+var tb=document.getElementById('tabs');
+BABS.forEach(function(b,i){var t=el('button','tab','<span>'+b.name+'</span><span class="sc" id="sc'+i+'">0/'+b.qs.length+'</span>');t.type='button';t.setAttribute('role','tab');t.setAttribute('aria-selected',i===0);t.onclick=function(){cur=i;pi=0;Array.prototype.forEach.call(tb.children,function(x,k){x.setAttribute('aria-selected',k===i)});render();window.scrollTo(0,0)};tb.appendChild(t)});
+render();
+</script>
+
+</body>
+</html>
